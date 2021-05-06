@@ -1,6 +1,5 @@
 <template>
   <div class="game">
-    <img alt="" src="../assets/ProductBox.png">
   </div>
 </template>
 
