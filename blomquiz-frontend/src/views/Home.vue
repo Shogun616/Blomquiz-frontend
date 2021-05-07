@@ -19,12 +19,8 @@ export default {
 
 <style scoped>
 
-<<<<<<< HEAD
-</style>
-=======
 .image {
 max-width:100%;
 height: auto;
 }
 </style>
->>>>>>> feature
