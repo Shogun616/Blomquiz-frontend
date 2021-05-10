@@ -9,15 +9,15 @@
 
   <img class="image" alt ="" src ="../assets/Tussilago.png">
 
-  <form v-on:submit.prevent="isCorrectAnswer">
+  <form v-on:submit.prevent="checkIsTrue">
 
-  <input type="radio" id="svar1" name="svar1" value="Tussilago">
+  <input v-on:change="checkIsTrue($event)"  type="radio" id="svar1" name="svar1" value="Tussilago">
   <label for="svar1">Tussilago</label>
 
-  <input type="radio" id="svar2" name="svar1" value="Maskros">
+  <input v-on:change="checkIsTrue($event)" type="radio" id="svar2" name="svar1" value="Maskros">
   <label for="svar2">Maskros</label>
 
-  <input type="radio" id="svar3" name="svar1" value="Smörblomma">
+  <input v-on:change="checkIsTrue($event)" type="radio" id="svar3" name="svar1" value="Smörblomma">
   <label for="svar3">Smörblomma</label>
 
 <br>
@@ -27,8 +27,8 @@
 
 </form>
 
-<PopUp v-if="isFalse"></PopUp>
-
+<PopUp v-if="isFalse"  v-bind:msg="svar" style="color: green"></PopUp>
+<PopUp v-else style="color: red"> Fel</PopUp>
 
 
 
@@ -52,22 +52,45 @@ export default {
 
 data: function () {
 return {
-isShowing: " ",
-isFalse: false,
+ isShowing: " ",
+ isFalse: false,
+  checkedValue:"",
+  svar :" "
+
 }
 },
 
 methods: {
-checkIsTrue: function () {
+/*checkIsTrue: function () {
 this.isShowing = "test";
 console.log("funkar?");
-},
-isCorrectAnswer: function(){
-this.isFalse = true;
-}
-}
+},*/
+checkIsTrue(event) {
+    this.checkedValue=event.target.value;
+  if(this.checkedValue === "Tussilago"){
+    this.isFalse=true
+    this.svar="Rätt"
+  }
+  else {
+    this.isFalse = false;
+    this.svar="Fel"
+  }
+    console.log(this.checkedValue)
 
+  }
+
+ /* if(this.value==="Tussilago"){
+    this.isFalse=true
+    this.svar="Rätt"
+  }
+  else{
+   this.isFalse = false;
+    this.svar="Fel"
+  }*/
+}
 };
+
+
 
 
 

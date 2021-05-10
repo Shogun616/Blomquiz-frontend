@@ -1,9 +1,9 @@
 <template>
 <div class="backdrop">
 <div class="popup">
-<h1>Rätt!</h1>
+<h1>{{msg}}</h1>
 <p>Loren</p>
- <button v-on:click="Next" class="button">Nästa</button>
+<!-- <button v-on:click="Next" class="button">Nästa</button>-->
 
 </div>
 </div>
@@ -13,6 +13,9 @@
 <script>
 export default {
 name: 'PopUp',
+  props :{
+  msg :String
+  }
 }
 
 </script>
@@ -23,7 +26,7 @@ name: 'PopUp',
 width: 400px;
 padding: 20px;
 margin: 100px auto;
-background: green;
+background: darkgrey;
 border-radius: 10px;
 }
 
