@@ -3,7 +3,7 @@
 <div class="popup">
 <h1>Rätt!</h1>
 <p>Loren</p>
- <button v:on-click="Next" class="button">Nästa</button>
+ <button v-on:click="Next" class="button">Nästa</button>
 
 </div>
 </div>
