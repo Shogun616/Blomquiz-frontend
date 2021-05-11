@@ -3,7 +3,11 @@
 <div class="popup" :class="popup1">
 <h1>{{msg}}</h1>
 <p>Loren</p>
+<<<<<<< HEAD
 <button v-on:click="Next" class="button">Nästa</button>
+=======
+ <button v-on:click="Next" class="button">Nästa</button>
+>>>>>>> 9d1b22e1edf21fbd993209e89861a59684d81b06
 
 </div>
 </div>
