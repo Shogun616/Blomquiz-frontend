@@ -1,9 +1,9 @@
 <template>
 <div class="backdrop">
-<div class="popup">
+<div class="popup" :class="popup1">
 <h1>{{msg}}</h1>
 <p>Loren</p>
-<!-- <button v-on:click="Next" class="button">Nästa</button>-->
+<button v-on:click="Next" class="button">Nästa</button>
 
 </div>
 </div>

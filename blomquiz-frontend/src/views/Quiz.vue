@@ -8,31 +8,38 @@
   </p>
 
   <img class="image" alt ="" src ="../assets/Tussilago.png">
+<div>
 
-  <form v-on:submit.prevent="checkIsTrue">
+    <form v-on:submit.prevent="checkAnswer">
 
-  <input v-on:change="checkIsTrue($event)"  type="radio" id="svar1" name="svar1" value="Tussilago">
-  <label for="svar1">Tussilago</label>
+<!--    v-on:change="checkIsTrue($event)"-->
 
-  <input v-on:change="checkIsTrue($event)" type="radio" id="svar2" name="svar1" value="Maskros">
-  <label for="svar2">Maskros</label>
+  <input type="radio" id="svar1" name="svar1" value="Tussilago" v-model="select">
 
-  <input v-on:change="checkIsTrue($event)" type="radio" id="svar3" name="svar1" value="Smörblomma">
-  <label for="svar3">Smörblomma</label>
+  <label for="svar1">Tussilago</label><br><br>
+
+  <input  type="radio" id="svar2" name="svar1" value="Maskros" v-model="select">
+  <label for="svar2">Maskros</label><br><br>
+
+  <input type="radio" id="svar3" name="svar1" value="Smörblomma" v-model="select">
+  <label for="svar3">Smörblomma</label><br><br>
 
 <br>
 <br>
- <input type="submit" value="Skicka">
-  <input type="submit" value="Avbryt">
+ <input type="submit" value="Skicka" >
+  <input type="button" value="Avbryt" v-on:click="quit">
 
 </form>
+</div>
 
-<PopUp v-if="isFalse"  v-bind:msg="svar" style="color: green"></PopUp>
-<PopUp v-else style="color: red"> Fel</PopUp>
+<PopUp v-if="svar === 'Rätt'"  v-bind:msg="svar" style="color: green"></PopUp>
+<PopUp v-else-if="svar ==='Fel'"  v-bind:msg="svar" style="color: red"> Fel</PopUp>
+    <br><br>
+    {{selected}}
+    {{svar}}
+    {{isTrue}}
 
 
-
-{{ isShowing }}
 
   </div>
 </template>
@@ -52,20 +59,44 @@ export default {
 
 data: function () {
 return {
- isShowing: " ",
+ /*isShowing: " ",
  isFalse: false,
-  checkedValue:"",
-  svar :" "
+  checkedValue:"",*/
+  svar :" ",
+  select:'',
+  selected:[],
+  isTrue:false,
+  first:"",
 
 }
 },
 
 methods: {
+
+    checkAnswer:function (){
+      this.selected.push(this.select)
+      if(this.selected[0] === "Tussilago"){
+        this.svar="Rätt"
+        this.isTrue=true
+
+      }
+      else{
+        this.svar="Fel"
+        this.isTrue=false
+      }
+    },
+  quit: function (){
+
+
+  }
+
+
+
 /*checkIsTrue: function () {
 this.isShowing = "test";
 console.log("funkar?");
 },*/
-checkIsTrue(event) {
+/*checkIsTrue(event) {
     this.checkedValue=event.target.value;
   if(this.checkedValue === "Tussilago"){
     this.isFalse=true
@@ -77,7 +108,7 @@ checkIsTrue(event) {
   }
     console.log(this.checkedValue)
 
-  }
+  }*/
 
  /* if(this.value==="Tussilago"){
     this.isFalse=true
