@@ -42,9 +42,7 @@ input label{
   grid-column: auto;
 
 }
-<<<<<<< HEAD
-</style>
-=======
+
 </style>
 
->>>>>>> 9d1b22e1edf21fbd993209e89861a59684d81b06
+
