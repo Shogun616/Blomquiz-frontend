@@ -8,6 +8,14 @@
   </p>
 
   <img class="image" alt ="" src ="../assets/Tussilago.png">
+
+<!--    <div>-->
+<!--      <ul>-->
+<!--        <li v-for="flower in flowers" :key="flower.id">{{flower.name}}</li>-->
+<!--      </ul>-->
+<!--    </div>-->
+
+
 <div>
 
     <form v-on:submit.prevent="checkAnswer">
@@ -67,9 +75,25 @@ return {
   selected:[],
   isTrue:false,
   first:"",
+  flowers: [],
+  answer: "",
+  alt1: "",
+  alt2: "",
+  level: 1,
+  question: 0,
+  counter: 0,
 
 }
 },
+  mounted(){
+    fetch('http://127.0.0.1:3000/api/flower/')
+    .then((response) => {
+      return response.json();
+    })
+    .then((data) => {
+      this.flowers = data.flower;
+    })
+  },
 
 methods: {
 
@@ -78,6 +102,7 @@ methods: {
       if(this.selected[0] === "Tussilago"){
         this.svar="Rätt"
         this.isTrue=true
+        this.counter++
 
       }
       else{
@@ -88,6 +113,23 @@ methods: {
   quit: function (){
 
 
+  },
+  getAlternatives(){
+    if(this.flowers[this.question].level === this.level){
+      this.answer = this.flowers[this.question].name
+
+      this.alt1 = this.flowers[Math.floor(Math.random() * 10 * this.level)+1].name
+      this.alt2 = this.flowers[Math.floor(Math.random() * 10 * this.level)+1].name
+
+      if(this.alt1===this.alt2 || this.alt1 === this.answer || this.alt2 === this.answer){
+        this.getAlternatives()
+      }else{
+        this.question++
+      }
+    }else {
+      this.question++
+      this.getAlternatives()
+    }
   }
 
 
