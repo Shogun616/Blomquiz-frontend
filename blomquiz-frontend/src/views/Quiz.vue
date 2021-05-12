@@ -3,7 +3,7 @@
 
 
     <p>
-      Vilken blomma är det här?
+      {{question}}
     </p>
 
     <img class="image" alt="" src="../assets/Tussilago.png">
@@ -33,7 +33,8 @@
         <br>
         <br>
         <input type="submit" value="Skicka">
-        <input type="button" value="Avbryt" v-on:click="quit">
+        <button type="button" v-on:click="quit">Nästa</button>
+        <input type="button" value="Avbryt" >
 
 
       </form>
@@ -43,9 +44,7 @@
 <!--    <PopUp v-if="svar === 'Rätt'" v-bind:msg="svar" style="color: green"></PopUp>-->
 <!--    <PopUp v-else-if="svar ==='Fel'" v-bind:msg="svar" style="color: red"></PopUp>-->
     <br><br>
-    {{ selected }}
-    {{ svar }}
-    {{ isTrue }}
+
 
 
   </div>
@@ -74,8 +73,8 @@ export default {
       selected: [],
       isTrue: false,
       first: "",
-      seen:false
-
+      seen:false,
+      question:"Vilken blomma är det här?"
     }
   },
 
@@ -94,8 +93,8 @@ export default {
       this.seen=true
     },
     quit: function () {
-
-
+      this.seen=false
+      this.selected=[]
     }
 
 
