@@ -1,14 +1,19 @@
 <template>
   <div class="quiz">
-
-    <p>
-      Fråga: {{questions+1}} /10
-      {{question}}
-    </p>
-
+<div v-if="visible">
+  <button v-on:click="getAlternatives">Start</button>
+</div>
 <!--    <img class="image" alt="" :src="'public/img/tussilago.png'">-->
-    <div>
-      {{counter}} /Antal Rätt
+    <div v-if="startGame">
+      <div>
+        <p>
+          Level: {{level}}
+          Fråga: {{questionNumber}} /10
+        </p>
+        <p>
+          {{counter}} /Antal Rätt
+        </p>
+      </div>
 
       <form v-on:submit.prevent="checkAnswer">
 
@@ -16,7 +21,7 @@
 
 <!--        <img class="image" alt ="" :src ="'../assets/img/'+ image">-->
 <!--        <img class="image" alt ="" src =../assets/img/>-->
-        <img :src="'img/' + image" alt="" style="">
+        <img class="image" :src="'img/' + image" alt="" style="">
         <br>
 
         <!--    <div>-->
@@ -35,21 +40,18 @@
         <input type="radio" :value="alt[2]" name="alt2" v-model="select">
         <br>
         <div>
-
           <div class="popup" v-if="seen">
             <h4>info om Blomman</h4>
             <h1 v-if="svar === 'Rätt'" style="color: green">{{ svar }}</h1>
-            <h1 v-else-if="svar ==='Fel'" style="color: red">{{svar}}</h1>
+            <h1 v-else-if="svar ==='Fel'" style="color: red">{{ svar }}</h1>
             <p>Loren</p>
           </div>
 
           <br>
           <br>
-<!--          <button v-on:click="getAlternatives">Start</button>-->
           <input type="submit" value="Skicka">
           <button type="button" v-on:click="next">Nästa</button>
-          <input type="button" value="Avbryt" >
-
+          <button type="button" v-on:click="exitGame">Avbryt</button>
         </div>
       </form>
     </div>
@@ -87,6 +89,9 @@ export default {
       level: 1,
       questions: 0,
       counter: 0,
+      startGame: false,
+      visible: true,
+      questionNumber: 0,
     }
   },
     mounted(){
@@ -111,23 +116,44 @@ export default {
           }
           this.seen = true
           },
-
         next () {
           this.seen = false
           this.selected = []
+          if(this.questions===10||this.questions===20){
+            this.checkLevel()
+          }
           this.getAlternatives()
         },
+      exitGame(){
+        this.seen = false
+        this.questions = 0
+        this.counter = 0
+        this.startGame = false
+        this.visible = true
+      },
+      checkLevel(){
+        if(this.counter===10){
+          alert("green");
+          this.level=2;
+        }else{
+          alert("red");
+          this.questions=this.questions-10;
+        }
+        this.counter=0;
+      },
       getAlternatives(){
-
+        this.startGame = true
+        this.visible = false
         if(this.flowers[this.questions].level === this.level){
           this.answer = this.flowers[this.questions].name
-          this.image = this.flowers[this.questions].url;
           this.alt1 = this.flowers[Math.floor(Math.random() * 10 * this.level)+1].name
           this.alt2 = this.flowers[Math.floor(Math.random() * 10 * this.level)+1].name
           if(this.alt1===this.alt2 || this.alt1 === this.answer || this.alt2 === this.answer){
 
             this.getAlternatives()
           }else{
+            this.questionNumber = this.flowers[this.questions].questionNumber;
+            this.image = this.flowers[this.questions].url;
             this.alt[0]=this.alt1;
             this.alt[1]=this.alt2;
             this.alt[2]=this.answer;
@@ -170,8 +196,7 @@ export default {
 
 <style scoped>
 .image {
-  max-width: 100%;
-  height: auto;
+  height: 400px;
 }
 .popup {
   width: 400px;
