@@ -2,17 +2,22 @@
   <div class="quiz">
 
     <p>
+      Fråga: {{questions+1}} /10
       {{question}}
     </p>
 
-<!--    <img class="image" alt="" src="../assets/Tussilago.png">-->
+<!--    <img class="image" alt="" :src="'public/img/tussilago.png'">-->
     <div>
+      {{counter}} /Antal Rätt
 
       <form v-on:submit.prevent="checkAnswer">
 
         <!--    v-on:change="checkIsTrue($event)"-->
 
-        <img class="image" alt ="" src ="../assets/Tussilago.png">
+<!--        <img class="image" alt ="" :src ="'../assets/img/'+ image">-->
+<!--        <img class="image" alt ="" src =../assets/img/>-->
+        <img :src="'img/' + image" alt="" style="">
+        <br>
 
         <!--    <div>-->
         <!--      <ul>-->
@@ -20,15 +25,16 @@
         <!--      </ul>-->
         <!--    </div>-->
 
+        <label>{{alt[0]}}</label>
+        <input type="radio" :value="alt[0]" name="answer" v-model="select">
+        <br>
+        <label>{{alt[1]}}</label>
+        <input type="radio" :value="alt[1]" name="alt1" v-model="select">
+        <br>
+        <label>{{alt[2]}}</label>
+        <input type="radio" :value="alt[2]" name="alt2" v-model="select">
+        <br>
         <div>
-          <input type="radio" id="svar1" name="svar1" value="Tussilago" v-model="select">
-          <label for="svar1">Tussilago</label><br><br>
-
-          <input type="radio" id="svar2" name="svar1" value="Maskros" v-model="select">
-          <label for="svar2">Maskros</label><br><br>
-
-          <input type="radio" id="svar3" name="svar1" value="Smörblomma" v-model="select">
-          <label for="svar3">Smörblomma</label><br>
 
           <div class="popup" v-if="seen">
             <h4>info om Blomman</h4>
@@ -39,8 +45,9 @@
 
           <br>
           <br>
+<!--          <button v-on:click="getAlternatives">Start</button>-->
           <input type="submit" value="Skicka">
-          <button type="button" v-on:click="quit">Nästa</button>
+          <button type="button" v-on:click="next">Nästa</button>
           <input type="button" value="Avbryt" >
 
         </div>
@@ -72,9 +79,11 @@ export default {
       seen:false,
       question:"Vilken blomma är det här?",
       flowers: [],
+      image: "",
       answer: "",
       alt1: "",
       alt2: "",
+      alt: [],
       level: 1,
       questions: 0,
       counter: 0,
@@ -92,7 +101,7 @@ export default {
     methods: {
       checkAnswer: function() {
         this.selected.push(this.select)
-          if (this.selected[0] === "Tussilago") {
+          if (this.selected[0] === this.answer) {
             this.svar = "Rätt"
             this.isTrue = true
             this.counter++
@@ -103,26 +112,34 @@ export default {
           this.seen = true
           },
 
-        quit () {
+        next () {
           this.seen = false
           this.selected = []
+          this.getAlternatives()
         },
-        getAlternatives()
-        {
-          if (this.flowers[this.questions].level === this.level) {
-            this.answer = this.flowers[this.questions].name
-            this.alt1 = this.flowers[Math.floor(Math.random() * 10 * this.level) + 1].name
-            this.alt2 = this.flowers[Math.floor(Math.random() * 10 * this.level) + 1].name
-            if (this.alt1 === this.alt2 || this.alt1 === this.answer || this.alt2 === this.answer) {
-              this.getAlternatives()
-            } else {
-              this.questions++
-            }
-          } else {
-            this.questions++
+      getAlternatives(){
+
+        if(this.flowers[this.questions].level === this.level){
+          this.answer = this.flowers[this.questions].name
+          this.image = this.flowers[this.questions].url;
+          this.alt1 = this.flowers[Math.floor(Math.random() * 10 * this.level)+1].name
+          this.alt2 = this.flowers[Math.floor(Math.random() * 10 * this.level)+1].name
+          if(this.alt1===this.alt2 || this.alt1 === this.answer || this.alt2 === this.answer){
+
             this.getAlternatives()
+          }else{
+            this.alt[0]=this.alt1;
+            this.alt[1]=this.alt2;
+            this.alt[2]=this.answer;
+            this.questions++
           }
+        }else {
+          this.questions++
+          this.getAlternatives()
         }
+
+        this.alt.sort()
+      }
         /*checkIsTrue: function () {
         this.isShowing = "test";
         console.log("funkar?");
