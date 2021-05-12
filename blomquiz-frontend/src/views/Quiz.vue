@@ -92,9 +92,6 @@ export default {
     methods: {
       checkAnswer: function() {
         this.selected.push(this.select)
-        if (this.selected[0] === "Tussilago") {
-          this.svar = "Rätt"
-          this.isTrue = true
           if (this.selected[0] === "Tussilago") {
             this.svar = "Rätt"
             this.isTrue = true
@@ -104,7 +101,7 @@ export default {
             this.isTrue = false
           }
           this.seen = true
-        }  },
+          },
 
         quit () {
           this.seen = false
