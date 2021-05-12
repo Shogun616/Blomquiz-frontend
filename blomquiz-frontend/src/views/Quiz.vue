@@ -44,7 +44,7 @@
             <h4>info om Blomman</h4>
             <h1 v-if="svar === 'Rätt'" style="color: green">{{ svar }}</h1>
             <h1 v-else-if="svar ==='Fel'" style="color: red">{{ svar }}</h1>
-            <p>Loren</p>
+            <p>{{info}}</p>
           </div>
 
           <br>
@@ -82,6 +82,7 @@ export default {
       question:"Vilken blomma är det här?",
       flowers: [],
       image: "",
+      info: "",
       answer: "",
       alt1: "",
       alt2: "",
@@ -154,6 +155,7 @@ export default {
           }else{
             this.questionNumber = this.flowers[this.questions].questionNumber;
             this.image = this.flowers[this.questions].url;
+            this.info = this.flowers[this.questions].info;
             this.alt[0]=this.alt1;
             this.alt[1]=this.alt2;
             this.alt[2]=this.answer;
