@@ -18,19 +18,15 @@
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
 
 export default {
-  name: 'Home',
-  components: {
-    HelloWorld
-  }
+  name: 'Home'
 }
 </script>
 
 <style scoped>
-
+</style>
+<style>
 .image {
 max-width:1000px;
 height: 500px;
@@ -46,4 +42,7 @@ input label{
   grid-column: auto;
 
 }
+
 </style>
+
+
