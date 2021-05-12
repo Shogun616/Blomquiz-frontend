@@ -1,12 +1,19 @@
 <template>
   <div class="quiz">
-  
- 
+
 
     <p>
-    Vilken blomma är det här?
-  </p>
+      {{question}}
+    </p>
 
+    <img class="image" alt="" src="../assets/Tussilago.png">
+    <div>
+
+      <form v-on:submit.prevent="checkAnswer">
+
+        <!--    v-on:change="checkIsTrue($event)"-->
+
+        <input type="radio" id="svar1" name="svar1" value="Tussilago" v-model="select">
   <img class="image" alt ="" src ="../assets/Tussilago.png">
 
 <!--    <div>-->
@@ -18,34 +25,35 @@
 
 <div>
 
-    <form v-on:submit.prevent="checkAnswer">
+        <label for="svar1">Tussilago</label><br><br>
 
-<!--    v-on:change="checkIsTrue($event)"-->
+        <input type="radio" id="svar2" name="svar1" value="Maskros" v-model="select">
+        <label for="svar2">Maskros</label><br><br>
 
-  <input type="radio" id="svar1" name="svar1" value="Tussilago" v-model="select">
+        <input type="radio" id="svar3" name="svar1" value="Smörblomma" v-model="select">
+        <label for="svar3">Smörblomma</label><br>
 
-  <label for="svar1">Tussilago</label><br><br>
+        <div class="popup" v-if="seen">
+          <h4>info om Bloma</h4>
+          <h1 v-if="svar === 'Rätt'" style="color: green">{{ svar }}</h1>
+          <h1 v-else-if="svar ==='Fel'" style="color: red">{{svar}}</h1>
+          <p>Loren</p>
+        </div>
 
-  <input  type="radio" id="svar2" name="svar1" value="Maskros" v-model="select">
-  <label for="svar2">Maskros</label><br><br>
+        <br>
+        <br>
+        <input type="submit" value="Skicka">
+        <button type="button" v-on:click="quit">Nästa</button>
+        <input type="button" value="Avbryt" >
 
-  <input type="radio" id="svar3" name="svar1" value="Smörblomma" v-model="select">
-  <label for="svar3">Smörblomma</label><br><br>
 
-<br>
-<br>
- <input type="submit" value="Skicka" >
-  <input type="button" value="Avbryt" v-on:click="quit">
+      </form>
+    </div>
 
-</form>
-</div>
 
-<PopUp v-if="svar === 'Rätt'"  v-bind:msg="svar" style="color: green"></PopUp>
-<PopUp v-else-if="svar ==='Fel'"  v-bind:msg="svar" style="color: red"> Fel</PopUp>
+<!--    <PopUp v-if="svar === 'Rätt'" v-bind:msg="svar" style="color: green"></PopUp>-->
+<!--    <PopUp v-else-if="svar ==='Fel'" v-bind:msg="svar" style="color: red"></PopUp>-->
     <br><br>
-    {{selected}}
-    {{svar}}
-    {{isTrue}}
 
 
 
@@ -53,18 +61,32 @@
 </template>
 
 <script>
-import PopUp from '../components/PopUp.vue'
+/*import PopUp from '../components/PopUp.vue'*/
 
 export default {
   name: "Quiz.vue",
 
   components: {
-  PopUp
+    // PopUp
 
 
   },
 
 
+
+  data: function () {
+    return {
+      /*isShowing: " ",
+      isFalse: false,
+       checkedValue:"",*/
+      svar: " ",
+      select: '',
+      selected: [],
+      isTrue: false,
+      first: "",
+      seen:false,
+      question:"Vilken blomma är det här?"
+    }
 data: function () {
 return {
  /*isShowing: " ",
@@ -95,23 +117,29 @@ return {
     })
   },
 
-methods: {
+  methods: {
 
-    checkAnswer:function (){
+    checkAnswer: function () {
       this.selected.push(this.select)
+      if (this.selected[0] === "Tussilago") {
+        this.svar = "Rätt"
+        this.isTrue = true
       if(this.selected[0] === "Tussilago"){
         this.svar="Rätt"
         this.isTrue=true
         this.counter++
 
+      } else {
+        this.svar = "Fel"
+        this.isTrue = false
       }
-      else{
-        this.svar="Fel"
-        this.isTrue=false
-      }
+      this.seen=true
     },
+    quit: function () {
+      this.seen=false
+      this.selected=[]
+    }
   quit: function (){
-
 
   },
   getAlternatives(){
@@ -132,39 +160,34 @@ methods: {
     }
   }
 
+    /*checkIsTrue: function () {
+    this.isShowing = "test";
+    console.log("funkar?");
+    },*/
+    /*checkIsTrue(event) {
+        this.checkedValue=event.target.value;
+      if(this.checkedValue === "Tussilago"){
+        this.isFalse=true
+        this.svar="Rätt"
+      }
+      else {
+        this.isFalse = false;
+        this.svar="Fel"
+      }
+        console.log(this.checkedValue)
 
+      }*/
 
-/*checkIsTrue: function () {
-this.isShowing = "test";
-console.log("funkar?");
-},*/
-/*checkIsTrue(event) {
-    this.checkedValue=event.target.value;
-  if(this.checkedValue === "Tussilago"){
-    this.isFalse=true
-    this.svar="Rätt"
+    /* if(this.value==="Tussilago"){
+       this.isFalse=true
+       this.svar="Rätt"
+     }
+     else{
+      this.isFalse = false;
+       this.svar="Fel"
+     }*/
   }
-  else {
-    this.isFalse = false;
-    this.svar="Fel"
-  }
-    console.log(this.checkedValue)
-
-  }*/
-
- /* if(this.value==="Tussilago"){
-    this.isFalse=true
-    this.svar="Rätt"
-  }
-  else{
-   this.isFalse = false;
-    this.svar="Fel"
-  }*/
-}
 };
-
-
-
 
 
 </script>
@@ -172,9 +195,16 @@ console.log("funkar?");
 <style scoped>
 
 .image {
-max-width: 100%;
-height: auto;
+  max-width: 100%;
+  height: auto;
 }
 
+.popup {
+  width: 400px;
+  padding: 20px;
+  margin:10px auto 10px auto;
+  background: darkgrey;
+  border-radius: 10px;
+}
 
 </style>
