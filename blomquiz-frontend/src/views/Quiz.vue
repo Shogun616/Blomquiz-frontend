@@ -2,6 +2,11 @@
   <div class="quiz">
 <div v-if="visible">
   <button v-on:click="getAlternatives">Start</button>
+<article>
+  
+  <p>Tryck på starta-knappen för att börja spelet.</p>
+</article>
+
 </div>
 <!--    <img class="image" alt="" :src="'public/img/tussilago.png'">-->
     <div v-if="startGame">
@@ -11,7 +16,7 @@
           Fråga: {{questionNumber}} /10
         </p>
         <p>
-          {{counter}} /Antal Rätt
+          {{counter}} /10 rätt
         </p>
       </div>
 
@@ -197,6 +202,7 @@ export default {
 </script>
 
 <style scoped>
+
 .image {
   height: 400px;
 }

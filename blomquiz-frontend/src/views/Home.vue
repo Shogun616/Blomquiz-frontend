@@ -2,7 +2,7 @@
   <div class="home">
     <div>
     <img class="image" alt="" src="../assets/ProductBox.png">
-    <HelloWorld msg="välkomen to Blom Quiz challenge"/>
+    
     </div>
    <div>
     <form action="" method="post" id="signup">
@@ -24,12 +24,11 @@ export default {
 }
 </script>
 
+
 <style scoped>
-</style>
-<style>
 .image {
-max-width:1000px;
-height: 500px;
+max-width:500px;
+height: 250px;
 }
 #signup{
   display: block;
@@ -42,7 +41,21 @@ input label{
   grid-column: auto;
 
 }
+/*Tablet*/
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+.image {
+max-width:1000px;
+height: 500px;
+}
+}
 
+/*Desktop*/
+@media screen and (min-width: 1025px){
+.image {
+max-width:1000px;
+height: 500px;
+}
+}
 </style>
 
 

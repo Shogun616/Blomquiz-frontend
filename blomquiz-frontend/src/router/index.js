@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -22,6 +23,12 @@ const routes = [
     path: '/quiz',
     name: 'Quiz',
     component: () => import('../views/Quiz.vue')
+  },
+
+  {
+    path: '/account',
+    name: 'Account',
+    component: () => import('../views/Account.vue')
   }
 ]
 
