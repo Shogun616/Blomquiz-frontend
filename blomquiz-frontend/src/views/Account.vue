@@ -29,10 +29,10 @@ export default {
   margin-bottom: 10px;
   margin-top: 0;
 }
+
 input label{
   display:grid;
   grid-column: auto;
-
 }
 
 fieldset {

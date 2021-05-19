@@ -6,17 +6,11 @@
 <h2>🌻 bli bäst på växt!</h2>
 
 </header>
-
     <nav>
-
-
       <router-link to="/">  Hem </router-link> 
       <router-link to="/quiz">  Spela </router-link> 
       <router-link to="/account">  Konto </router-link>
       <router-link to="/about">  Spelregler </router-link>
-    
-      
-      
     </nav>
     <main>
  <router-view/>
@@ -24,7 +18,6 @@
 <p>🌻 Kan användas i alla åldrar!</p>
 <p>🌻 Jämför dig med dina vänner</p>
     </main>
-   
   </div>
 </template>
 
@@ -82,7 +75,6 @@ font-family: 'Montserrat', sans-serif;
 }
 
 p {
-
  font-size: 16px;
   font-weight: bold;
   font-family: 'Poppins', sans-serif;
@@ -101,17 +93,13 @@ h2 {
 }
 
 .image_header {
-display: grid;
-   width:700px;
-    height: auto;
-	margin: 0 auto;
-  
-    margin-bottom: 5px;
+  display: grid;
+  width:700px;
+  height: auto;
+  margin: 0 auto 5px;
 }
 
-
 nav {
-  
   grid-area: nav;
   display: flex;
   flex-direction: column;
@@ -123,20 +111,17 @@ nav {
   font-family: 'Poppins', sans-serif;
    font-size: 16px;
    margin-bottom: 25px;
-
-
 }
 
 a { 
   text-decoration: none; 
   }
 
-  nav a:hover {
-    text-decoration: underline;  
+nav a:hover {
+  text-decoration: underline;
 }
+
 nav a {
-
-
   flex-direction: column;
     color: #242614;
     padding: 5px;
@@ -148,17 +133,11 @@ nav a {
     width: 150px;
     height: auto;
     text-align: center;*/
-
-  
-
 }
 
 main {
   grid-area: main;
   margin-bottom: 25px;
-  
-
-
 }
 
 footer {
@@ -177,10 +156,8 @@ color:#F2F2F2;
     font-weight: bold;
 }
 
-
 /*Tablet*/
 @media screen and (min-width: 768px) and (max-width: 1024px) {
-
 
 section.grid-container {
 width: 1000px;
@@ -199,7 +176,6 @@ nav {
 }
 
 }
-
 
 /*Desktop*/
 @media screen and (min-width: 1025px){
