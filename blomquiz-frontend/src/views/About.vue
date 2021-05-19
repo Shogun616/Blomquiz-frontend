@@ -1,6 +1,6 @@
 <template>
   <div class="about">
-    <h1>Spelregler:</h1>
+    <h2>Spelregler:</h2>
 <article>
 <p>I detta frågespel kan du lära dig mer om blommor som växer i Sverige.</p>
     <p>Frågespelet går ut på att du ska gissa på det alternativ du tror är rätt. </p>

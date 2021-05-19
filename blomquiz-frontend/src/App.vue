@@ -1,5 +1,7 @@
 <template>
+<body>
   <div id="app" section class="grid-container">
+  
 <header>
  <h1> <img src="./assets/quiz_logga.jpg" class="image_header"> </h1>
 </header>
@@ -13,6 +15,7 @@
  <router-view/>
     </main>
   </div>
+  </body>
 </template>
 
 <style>
@@ -21,6 +24,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@700&display=swap');
 
 /*Mobile*/
+
+body {
+      background-color: #242614;
+}
 
 #app {
   font-family: 'Montserrat', sans-serif;
@@ -64,13 +71,13 @@ margin-bottom: 25px;
 padding: 10px;
 font-size: 25px;
 font-family: 'Montserrat', sans-serif;
-  /* background-color: #BFB26F;*/
+   background-color: #E09D31; /*#BFB26F;*/
 }
 
 p {
  font-size: 16px;
   font-weight: bold;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 h1 {
@@ -101,28 +108,21 @@ nav {
 
 }
 
-a { 
-  text-decoration: none; 
-  }
 
 nav a:hover {
-  text-decoration: underline;
+  text-decoration: white;
 }
 
 
 nav a {
  flex-direction: column;
-    color: #242614;
+    color: #F2F2F2;
+    background-color: #242614;
     padding: 5px;
     margin: 5px;
     font-size: 15px;
     text-decoration: underline;
-  /*
-    border-radius: 10px 15px;
-    background:  #242B20; 
-    width: 150px;
-    height: auto;
-    text-align: center;*/
+
 }
 
 main {
@@ -137,13 +137,11 @@ footer {
 .style_btn {
 background-color: #242B20;
 color:#F2F2F2; 
-   border-radius: 5px 5px;
  padding: 5px;
-    width: 100px;
+    width: 90px;
     height: auto;
     margin: 5px;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
 }
 
 .image_header {
@@ -175,7 +173,9 @@ nav {
   padding: 5px;
   margin: 5px;
   grid-gap: 5px;
+     margin-bottom: 50px;
 }
+
 
 .image_header {
 width:750px;
@@ -188,11 +188,9 @@ width:750px;
 @media screen and (min-width: 1025px){
 
 .image_header {
-
-width:860px;
-
-
+width:800px;
 }
+
 
 nav {
   grid-area: nav;
@@ -203,6 +201,7 @@ nav {
   padding: 5px;
   margin: 5px;
   grid-gap: 5px;
+      margin-bottom: 50px;
 }
 
 }

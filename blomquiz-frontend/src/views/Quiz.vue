@@ -1,23 +1,23 @@
 <template>
   <div class="quiz">
 <div v-if="visible">
+
   <button v-on:click="getAlternatives" class="style_btn">Start</button>
 <article>
   
   <p>Tryck på starta-knappen för att börja spelet.</p>
 </article>
-
+<h1>🌻</h1> 
 </div>
 <!--    <img class="image" alt="" :src="'public/img/tussilago.png'">-->
     <div v-if="startGame">
       <div>
         <p>
-          Nivå: {{level}}.
-          Fråga: {{questionNumber}} av 10.
+          Fråga: {{questionNumber}} / 10 (Nivå: {{level}}).
         </p>
-        <p>
-          {{counter}} /10 rätt
-        </p>
+           <h2>Vilken blomma är det här?</h2>
+  
+     
       </div>
 
       <form v-on:submit.prevent="checkAnswer">
@@ -57,12 +57,17 @@
           <input type="submit" value="Skicka" class="style_btn">
           <button type="button" v-on:click="next" class="style_btn">Nästa</button>
           <button type="button" v-on:click="exitGame" class="style_btn">Avbryt</button>
+        </div> 
+        <div><article><p>
+          Antal rätt: {{counter}} / 10 rätt
+        </p>
+        <p></p>
+        </article>
         </div>
       </form>
     </div>
     <!--    <PopUp v-if="svar === 'Rätt'" v-bind:msg="svar" style="color: green"></PopUp>-->
     <!--    <PopUp v-else-if="svar ==='Fel'" v-bind:msg="svar" style="color: red"></PopUp>-->
-    <br><br>
   </div>
 </template>
 
@@ -212,5 +217,9 @@ export default {
   margin:10px auto 10px auto;
   background: darkgrey;
   border-radius: 10px;
+}
+
+.random {
+  font-size: 100px;
 }
 </style>

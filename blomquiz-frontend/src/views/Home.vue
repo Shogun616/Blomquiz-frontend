@@ -4,12 +4,11 @@
              <!--   
     <img class="image" alt="" src="../assets/quiz_logga.jpg">
   -->
-   
-   <h2>🌻</h2> 
+<p></p>
 <p>Ett quiz som motiverar användaren att fortsätta och förbättra sig.</p>
 <p>Kan användas i alla åldrar!</p>
 <p>Jämför dig med dina vänner</p>
-<h2>🌻</h2> 
+<h1>🌻</h1> 
 
 
     </div>
@@ -40,6 +39,8 @@ input label{
   display:grid;
   grid-column: auto;
 }
+
+
 /*Tablet*/
 @media screen and (min-width: 768px) and (max-width: 1024px) {
 .image {
