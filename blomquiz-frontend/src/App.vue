@@ -110,14 +110,13 @@ nav a:hover {
 }
 
 
-
-
 nav a {
  flex-direction: column;
     color: #242614;
     padding: 5px;
     margin: 5px;
     font-size: 15px;
+    text-decoration: underline;
   /*
     border-radius: 10px 15px;
     background:  #242B20; 
