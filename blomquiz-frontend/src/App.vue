@@ -14,9 +14,6 @@
     </nav>
     <main>
  <router-view/>
-<p>🌻 Ett quiz som motiverar användaren att fortsätta och förbättra sig.</p>
-<p>🌻 Kan användas i alla åldrar!</p>
-<p>🌻 Jämför dig med dina vänner</p>
     </main>
   </div>
 </template>
