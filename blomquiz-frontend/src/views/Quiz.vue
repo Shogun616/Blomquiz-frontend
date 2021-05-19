@@ -47,8 +47,8 @@
         <div>
           <div class="popup" v-if="seen">
            
-            <h1 v-if="svar === 'Rätt'" style="color: #627327">{{ svar }}</h1>
-            <h1 v-else-if="svar ==='Fel'" style="color: #BB5C23">{{ svar }}</h1>
+            <h1 v-if="svar === 'Rätt'" style="color: #6D8227">{{ svar }}</h1>
+            <h1 v-else-if="svar ==='Fel'" style="color: #BA5D23">{{ svar }}</h1>
            
             <p>{{info}}</p>
           </div>
@@ -216,7 +216,7 @@ export default {
   width: 400px;
   padding: 20px;
   margin:10px auto 10px auto;
-  background: darkgrey;
+  background: lightgrey;
   border-radius: 10px;
 }
 
