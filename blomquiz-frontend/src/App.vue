@@ -1,14 +1,10 @@
 <template>
   <div id="app" section class="grid-container">
 <header>
-  <img src="./assets/quiz-header.jpg" class="image_header">
-<h1>blomquiz.</h1>
-<h2>🌻 bli bäst på växt!</h2>
-
+ <h1> <img src="./assets/quiz_logga.jpg" class="image_header"> </h1>
 </header>
 
     <nav>
-
 
       <router-link to="/">  Hem </router-link> 
       <router-link to="/quiz">  Spela </router-link> 
@@ -20,9 +16,6 @@
     </nav>
     <main>
  <router-view/>
-<p>🌻 Ett quiz som motiverar användaren att fortsätta och förbättra sig.</p>
-<p>🌻 Kan användas i alla åldrar!</p>
-<p>🌻 Jämför dig med dina vänner</p>
     </main>
    
   </div>
@@ -43,7 +36,6 @@
   text-align: center;
   color: #242614;
   background-color:#F2F2F2;
-
 
   
   /*#242B20;*/
@@ -104,11 +96,10 @@ h2 {
 display: grid;
    width:700px;
     height: auto;
-	margin: 0 auto;
+  margin: 0 auto;
   
     margin-bottom: 5px;
 }
-
 
 nav {
   
@@ -124,18 +115,16 @@ nav {
    font-size: 16px;
    margin-bottom: 25px;
 
-
 }
 
 a { 
-  text-decoration: none; 
+ /* text-decoration: none; */
   }
 
   nav a:hover {
     text-decoration: underline;  
 }
 nav a {
-
 
   flex-direction: column;
     color: #242614;
@@ -158,7 +147,6 @@ main {
   margin-bottom: 25px;
   
 
-
 }
 
 footer {
@@ -177,10 +165,8 @@ color:#F2F2F2;
     font-weight: bold;
 }
 
-
 /*Tablet*/
 @media screen and (min-width: 768px) and (max-width: 1024px) {
-
 
 section.grid-container {
 width: 1000px;
@@ -199,7 +185,6 @@ nav {
 }
 
 }
-
 
 /*Desktop*/
 @media screen and (min-width: 1025px){

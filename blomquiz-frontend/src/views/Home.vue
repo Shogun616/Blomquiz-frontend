@@ -5,6 +5,12 @@
     <img class="image" alt="" src="../assets/quiz_logga.jpg">
   -->
   
+<h2>🌻</h2> 
+<p>Ett quiz som motiverar användaren att fortsätta och förbättra sig.</p>
+<p>Kan användas i alla åldrar!</p>
+<p>Jämför dig med dina vänner</p>
+<h2>🌻</h2> 
+
     </div>
    <div>
     <form action="" method="post" id="signup">
@@ -25,7 +31,6 @@ export default {
   name: 'Home'
 }
 </script>
-
 
 <style scoped>
 .image {
@@ -59,5 +64,3 @@ width:625px;
 }
 }
 </style>
-
-
