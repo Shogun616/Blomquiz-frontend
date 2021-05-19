@@ -2,12 +2,13 @@
   <div class="account">
     <div>
       <form action="" method="post" id="signup">
-        <label for="user">Användarnamn:</label>
+        <label for="user">Användarnamn: </label>
         <input type="text" id="user" required v-model="userName"><br><br>
-        <label for="password"> Lösenord:</label>
+        <label for="password"> Lösenord: </label>
         <input type="password" id="password" v-model="password"><br><br>
 
         <input type="submit" value="Logga in">
+        <br><br>
       </form>
     </div>
   </div>
