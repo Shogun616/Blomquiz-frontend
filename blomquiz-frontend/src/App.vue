@@ -3,21 +3,15 @@
 <header>
  <h1> <img src="./assets/quiz_logga.jpg" class="image_header"> </h1>
 </header>
-
     <nav>
-
-      <router-link to="/">  Hem </router-link> 
+    <router-link to="/">  Hem </router-link> 
       <router-link to="/quiz">  Spela </router-link> 
-            <router-link to="/about">  Konto </router-link>
+      <router-link to="/account">  Konto </router-link>
       <router-link to="/about">  Spelregler </router-link>
-    
-      
-      
     </nav>
     <main>
  <router-view/>
     </main>
-   
   </div>
 </template>
 
@@ -53,9 +47,9 @@ section {
     grid-template-columns: 1fr;
     grid-template-rows: auto auto auto auto;
     grid-template-areas:
-    "header",
-    "nav",
-    "main",
+    "header"
+    "nav"
+    "main"
     "footer";
     grid-gap: 20px;
     background-color: white;
@@ -63,7 +57,7 @@ section {
 
 header {
 grid-area: header;
-display: center;
+/*display: center;*/
 text-align: center;
 margin-top: 25px;
 margin-bottom: 25px;
@@ -74,7 +68,6 @@ font-family: 'Montserrat', sans-serif;
 }
 
 p {
-
  font-size: 16px;
   font-weight: bold;
   font-family: 'Poppins', sans-serif;
@@ -92,17 +85,8 @@ h2 {
     color: #242614;
 }
 
-.image_header {
-display: grid;
-   width:700px;
-    height: auto;
-  margin: 0 auto;
-  
-    margin-bottom: 5px;
-}
 
 nav {
-  
   grid-area: nav;
   display: flex;
   flex-direction: column;
@@ -118,15 +102,18 @@ nav {
 }
 
 a { 
- /* text-decoration: none; */
+  text-decoration: none; 
   }
 
-  nav a:hover {
-    text-decoration: underline;  
+nav a:hover {
+  text-decoration: underline;
 }
-nav a {
 
-  flex-direction: column;
+
+
+
+nav a {
+ flex-direction: column;
     color: #242614;
     padding: 5px;
     margin: 5px;
@@ -137,16 +124,11 @@ nav a {
     width: 150px;
     height: auto;
     text-align: center;*/
-
-  
-
 }
 
 main {
   grid-area: main;
   margin-bottom: 25px;
-  
-
 }
 
 footer {
@@ -163,6 +145,18 @@ color:#F2F2F2;
     margin: 5px;
     font-family: 'Montserrat', sans-serif;
     font-weight: bold;
+}
+
+.image_header {
+
+display: grid;
+   width: 450px;
+    height: auto;
+  margin: 0 auto;
+  
+    margin-bottom: 5px;
+
+
 }
 
 /*Tablet*/
@@ -184,10 +178,22 @@ nav {
   grid-gap: 5px;
 }
 
+.image_header {
+width:750px;
+
+}
+
 }
 
 /*Desktop*/
 @media screen and (min-width: 1025px){
+
+.image_header {
+
+width:860px;
+
+
+}
 
 nav {
   grid-area: nav;
