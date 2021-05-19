@@ -4,7 +4,13 @@
              <!--   
     <img class="image" alt="" src="../assets/quiz_logga.jpg">
   -->
-    </div>
+   
+   <h2>🌻</h2> 
+<p>Ett quiz som motiverar användaren att fortsätta och förbättra sig.</p>
+<p>Kan användas i alla åldrar!</p>
+<p>Jämför dig med dina vänner</p>
+<h2>🌻</h2> 
+   </div>
   </div>
 </template>
 
