@@ -46,9 +46,10 @@
         <br>
         <div>
           <div class="popup" v-if="seen">
-            <h4>info om Blomman</h4>
-            <h1 v-if="svar === 'Rätt'" style="color: green">{{ svar }}</h1>
-            <h1 v-else-if="svar ==='Fel'" style="color: red">{{ svar }}</h1>
+           
+            <h1 v-if="svar === 'Rätt'" style="color: #627327">{{ svar }}</h1>
+            <h1 v-else-if="svar ==='Fel'" style="color: #BB5C23">{{ svar }}</h1>
+           
             <p>{{info}}</p>
           </div>
 

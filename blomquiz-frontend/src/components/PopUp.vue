@@ -27,7 +27,7 @@ name: 'PopUp',
 width: 400px;
 padding: 20px;
 margin: 100px auto;
-background: darkgrey;
+background: #DEDCA4;
 border-radius: 10px;
 }
 
