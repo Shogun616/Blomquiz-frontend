@@ -4,18 +4,7 @@
              <!--   
     <img class="image" alt="" src="../assets/quiz_logga.jpg">
   -->
-  
     </div>
-   <div>
-    <form action="" method="post" id="signup">
-      <label for="user">username:</label>
-      <input type="text" id="user" required v-model="userName"><br><br>
-      <label for="password"> password:</label>
-      <input type="password" id="password" v-model="password"><br><br>
-
-      <input type="submit" value="signUp">
-    </form>
-   </div>
   </div>
 </template>
 

@@ -12,7 +12,7 @@
 
       <router-link to="/">  Hem </router-link> 
       <router-link to="/quiz">  Spela </router-link> 
-            <router-link to="/about">  Konto </router-link>
+      <router-link to="/account">  Konto </router-link>
       <router-link to="/about">  Spelregler </router-link>
     
       
@@ -61,9 +61,9 @@ section {
     grid-template-columns: 1fr;
     grid-template-rows: auto auto auto auto;
     grid-template-areas:
-    "header",
-    "nav",
-    "main",
+    "header"
+    "nav"
+    "main"
     "footer";
     grid-gap: 20px;
     background-color: white;
@@ -71,7 +71,7 @@ section {
 
 header {
 grid-area: header;
-display: center;
+/*display: center;*/
 text-align: center;
 margin-top: 25px;
 margin-bottom: 25px;
