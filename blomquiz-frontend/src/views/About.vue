@@ -7,6 +7,7 @@
 <p>Spelet består av 2 nivåer med 10 frågor per nivå.</p>
 <p>För att komma vidare till nästa nivå måste du ha 10/10 rätt.</p>
 
+
 </article>
 
   </div>

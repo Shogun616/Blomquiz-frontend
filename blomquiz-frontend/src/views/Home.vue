@@ -1,12 +1,14 @@
 <template>
   <div class="home">
     <div>
-    <img class="image" alt="" src="../assets/ProductBox.png">
-    
+             <!--   
+    <img class="image" alt="" src="../assets/quiz_logga.jpg">
+  -->
+  
     </div>
    <div>
     <form action="" method="post" id="signup">
-      <label for="user">User Name:</label>
+      <label for="user">username:</label>
       <input type="text" id="user" required v-model="userName"><br><br>
       <label for="password"> password:</label>
       <input type="password" id="password" v-model="password"><br><br>
@@ -27,8 +29,8 @@ export default {
 
 <style scoped>
 .image {
-max-width:500px;
-height: 250px;
+width:400px;
+
 }
 #signup{
   display: block;
@@ -44,16 +46,16 @@ input label{
 /*Tablet*/
 @media screen and (min-width: 768px) and (max-width: 1024px) {
 .image {
-max-width:1000px;
-height: 500px;
+width:625px;
+
 }
 }
 
 /*Desktop*/
 @media screen and (min-width: 1025px){
 .image {
-max-width:1000px;
-height: 500px;
+width:625px;
+
 }
 }
 </style>

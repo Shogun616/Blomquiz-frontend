@@ -1,7 +1,7 @@
 <template>
   <div class="quiz">
 <div v-if="visible">
-  <button v-on:click="getAlternatives">Start</button>
+  <button v-on:click="getAlternatives" class="style_btn">Start</button>
 <article>
   
   <p>Tryck på starta-knappen för att börja spelet.</p>
@@ -12,8 +12,8 @@
     <div v-if="startGame">
       <div>
         <p>
-          Level: {{level}}
-          Fråga: {{questionNumber}} /10
+          Nivå: {{level}}.
+          Fråga: {{questionNumber}} av 10.
         </p>
         <p>
           {{counter}} /10 rätt
@@ -54,9 +54,9 @@
 
           <br>
           <br>
-          <input type="submit" value="Skicka">
-          <button type="button" v-on:click="next">Nästa</button>
-          <button type="button" v-on:click="exitGame">Avbryt</button>
+          <input type="submit" value="Skicka" class="style_btn">
+          <button type="button" v-on:click="next" class="style_btn">Nästa</button>
+          <button type="button" v-on:click="exitGame" class="style_btn">Avbryt</button>
         </div>
       </form>
     </div>
