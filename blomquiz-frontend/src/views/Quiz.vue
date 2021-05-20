@@ -19,11 +19,17 @@
   
      
       </div>
-
+<div class="question">
       <form v-on:submit.prevent="checkAnswer">
 
         <!--    v-on:change="checkIsTrue($event)"-->
-
+<div class="popup" v-if="seen">
+           
+            <h1 v-if="svar === 'Rätt'" style="color: #6D8227">{{ svar }}</h1>
+            <h1 v-else-if="svar ==='Fel'" style="color: #BA5D23">{{ svar }}</h1>
+           
+            <p>{{info}}</p>
+          </div>
 <!--        <img class="image" alt ="" :src ="'../assets/img/'+ image">-->
 <!--        <img class="image" alt ="" src =../assets/img/>-->
         <img class="image" :src="'img/' + image" alt="" style="">
@@ -45,13 +51,7 @@
         <input type="radio" :value="alt[2]" name="alt2" v-model="select">
         <br>
         <div>
-          <div class="popup" v-if="seen">
-           
-            <h1 v-if="svar === 'Rätt'" style="color: #6D8227">{{ svar }}</h1>
-            <h1 v-else-if="svar ==='Fel'" style="color: #BA5D23">{{ svar }}</h1>
-           
-            <p>{{info}}</p>
-          </div>
+       
 
           <br>
           <br>
@@ -66,6 +66,7 @@
         </article>
         </div>
       </form>
+      </div>
     </div>
     <!--    <PopUp v-if="svar === 'Rätt'" v-bind:msg="svar" style="color: green"></PopUp>-->
     <!--    <PopUp v-else-if="svar ==='Fel'" v-bind:msg="svar" style="color: red"></PopUp>-->
@@ -209,15 +210,28 @@ export default {
 
 <style scoped>
 
+.question{
+  position:relative;
+  width: 400px;
+  padding: 20px;
+  margin:10px auto 10px auto;
+  border-radius: 10px;
+  z-index: 0;
+  alignment: center;
+}
+
 .image {
   height: 400px;
 }
 .popup {
+  position:absolute;
   width: 400px;
   padding: 20px;
   margin:10px auto 10px auto;
   background: lightgrey;
   border-radius: 10px;
+  z-index:1;
+  alignment: center;
 }
 
 .random {
