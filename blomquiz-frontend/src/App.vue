@@ -147,7 +147,7 @@ color:#F2F2F2;
 .image_header {
 
 display: grid;
-   width: 450px;
+   width: 360px;
     height: auto;
   margin: 0 auto;
   

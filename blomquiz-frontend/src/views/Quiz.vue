@@ -146,10 +146,10 @@ export default {
       },
       checkLevel(){
         if(this.counter===10){
-          alert("green");
+          alert("Grattis! Du svarade rätt på alla frågorna.");
           this.level=2;
         }else{
-          alert("red");
+          alert("Tyvärr! Du svarade inte rätt på alla frågorna. Försök igen.");
           this.questions=this.questions-10;
         }
         this.counter=0;
@@ -221,17 +221,16 @@ export default {
 }
 
 .image {
-  height: 400px;
+  width:400px
 }
 .popup {
   position:absolute;
-  width: 400px;
+  width: 360px;
   padding: 20px;
   margin:10px auto 10px auto;
   background: lightgrey;
   border-radius: 10px;
   z-index:1;
-  alignment: center;
 }
 
 .random {
