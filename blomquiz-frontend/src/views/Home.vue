@@ -8,11 +8,8 @@
 <p>Ett quiz som motiverar användaren att fortsätta och förbättra sig.</p>
 <p>Kan användas i alla åldrar!</p>
 <p>Jämför dig med dina vänner</p>
-<h1>🌻</h1> 
-
-
+<h1>🌻</h1>
     </div>
- 
   </div>
 </template>
 
@@ -39,7 +36,6 @@ input label{
   display:grid;
   grid-column: auto;
 }
-
 
 /*Tablet*/
 @media screen and (min-width: 768px) and (max-width: 1024px) {

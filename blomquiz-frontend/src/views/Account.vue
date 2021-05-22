@@ -7,7 +7,7 @@
         <label for="password"> Lösenord: </label>
         <input type="password" id="password" v-model="password"><br><br>
 
-        <input type="submit" value="Logga in">
+        <input type="submit" class="style_btn" value="Logga in">
         <br><br>
       </form>
     </div>

@@ -1,10 +1,8 @@
 <template>
   <div class="quiz">
 <div v-if="visible">
-
   <button v-on:click="getAlternatives" class="style_btn">Start</button>
 <article>
-  
   <p>Tryck på starta-knappen för att börja spelet.</p>
 </article>
 <h1>🌻</h1> 
@@ -15,9 +13,7 @@
         <p>
           Fråga: {{questionNumber}} / 10 (Nivå: {{level}}).
         </p>
-           <h2>Vilken blomma är det här?</h2>
-  
-     
+        <h2>Vilken blomma är det här?</h2>
       </div>
 <div class="question">
       <form v-on:submit.prevent="checkAnswer">
