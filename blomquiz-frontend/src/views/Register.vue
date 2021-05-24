@@ -12,7 +12,7 @@
           placeholder="password..."
           v-model="password"
       />
-      <button type="submit">Register</button>
+      <button class="style_btn" type="submit">Register</button>
     </form>
   </div>
 </template>

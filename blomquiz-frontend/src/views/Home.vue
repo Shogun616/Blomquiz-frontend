@@ -4,15 +4,12 @@
              <!--   
     <img class="image" alt="" src="../assets/quiz_logga.jpg">
   -->
-<p></p>
-<p>Ett quiz som motiverar användaren att fortsätta och förbättra sig.</p>
-<p>Kan användas i alla åldrar!</p>
-<p>Jämför dig med dina vänner</p>
-<h1>🌻</h1> 
-
-
+      <p></p>
+      <p>Ett quiz som motiverar användaren att fortsätta och förbättra sig.</p>
+      <p>Kan användas i alla åldrar!</p>
+      <p>Jämför dig med dina vänner</p>
+      <h1>🌻</h1>
     </div>
- 
   </div>
 </template>
 
@@ -25,7 +22,7 @@ export default {
 
 <style scoped>
 .image {
-width:400px;
+  width:400px;
 }
 
 #signup{
@@ -40,19 +37,18 @@ input label{
   grid-column: auto;
 }
 
+/*!*Tablet*!*/
+/*@media screen and (min-width: 768px) and (max-width: 1024px) {*/
+/*.image {*/
+/*width:625px;*/
+/*}*/
+/*}*/
 
-/*Tablet*/
-@media screen and (min-width: 768px) and (max-width: 1024px) {
-.image {
-width:625px;
-}
-}
+/*!*Desktop*!*/
+/*@media screen and (min-width: 1025px){*/
+/*.image {*/
+/*width:625px;*/
+/*}*/
 
-/*Desktop*/
-@media screen and (min-width: 1025px){
-.image {
-width:625px;
-}
-
-}
+/*}*/
 </style>

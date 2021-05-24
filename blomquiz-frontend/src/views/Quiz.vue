@@ -1,10 +1,8 @@
 <template>
   <div class="quiz">
 <div v-if="visible">
-
   <button v-on:click="getAlternatives" class="style_btn">Start</button>
 <article>
-  
   <p>Tryck på starta-knappen för att börja spelet.</p>
 </article>
 <h1>🌻</h1> 
@@ -15,32 +13,25 @@
         <p>
           Fråga: {{questionNumber}} / 10 (Nivå: {{level}}).
         </p>
-           <h2>Vilken blomma är det här?</h2>
-  
-     
+        <h2>Vilken blomma är det här?</h2>
       </div>
 <div class="question">
       <form v-on:submit.prevent="checkAnswer">
-
         <!--    v-on:change="checkIsTrue($event)"-->
 <div class="popup" v-if="seen">
-           
             <h1 v-if="svar === 'Rätt'" style="color: #6D8227">{{ svar }}</h1>
             <h1 v-else-if="svar ==='Fel'" style="color: #BA5D23">{{ svar }}</h1>
-           
             <p>{{info}}</p>
           </div>
 <!--        <img class="image" alt ="" :src ="'../assets/img/'+ image">-->
 <!--        <img class="image" alt ="" src =../assets/img/>-->
         <img class="image" :src="'img/' + image" alt="" style="">
         <br>
-
         <!--    <div>-->
         <!--      <ul>-->
         <!--        <li v-for="flower in flowers" :key="flower.id">{{flower.name}}</li>-->
         <!--      </ul>-->
         <!--    </div>-->
-
         <label>{{alt[0]}}</label>
         <input type="radio" :value="alt[0]" name="answer" v-model="select">
         <br>
@@ -51,8 +42,6 @@
         <input type="radio" :value="alt[2]" name="alt2" v-model="select">
         <br>
         <div>
-       
-
           <br>
           <br>
           <input type="submit" value="Skicka" class="style_btn">
@@ -212,7 +201,7 @@ export default {
 
 .question{
   position:relative;
-  width: 400px;
+  width: 360px;
   padding: 20px;
   margin:10px auto 10px auto;
   border-radius: 10px;
@@ -221,7 +210,7 @@ export default {
 }
 
 .image {
-  width:400px
+  width:360px
 }
 .popup {
   position:absolute;
@@ -233,7 +222,7 @@ export default {
   z-index:1;
 }
 
-.random {
-  font-size: 100px;
-}
+/*.random {*/
+/*  font-size: 100px;*/
+/*}*/
 </style>
