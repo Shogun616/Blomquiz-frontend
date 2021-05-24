@@ -7,8 +7,9 @@
 </header>
     <nav>
     <router-link to="/">  Hem </router-link> 
-      <router-link to="/quiz">  Spela </router-link> 
-      <router-link to="/account">  Konto </router-link>
+      <router-link to="/quiz">  Spela </router-link>
+      <router-link to="/account">  Logga in </router-link>
+      <router-link to="/register">  Ny användare </router-link>
       <router-link to="/about">  Spelregler </router-link>
     </nav>
     <main>
