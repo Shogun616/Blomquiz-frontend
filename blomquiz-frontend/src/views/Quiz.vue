@@ -214,7 +214,7 @@ export default {
 }
 .popup {
   position:absolute;
-  width: 360px;
+  width: 320px;
   padding: 20px;
   margin:10px auto 10px auto;
   background: lightgrey;

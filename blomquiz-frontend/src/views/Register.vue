@@ -1,18 +1,20 @@
 <template>
   <div>
     <form @submit.prevent="register">
-      <h2>Register</h2>
-      <input
+      <h2>Registrera:</h2>
+      <label>Email:</label> <input
           type="email"
           placeholder="Email address..."
           v-model="email"
       />
-      <input
+      <br><br>
+      <label>Lösenord:</label> <input
           type="password"
           placeholder="password..."
           v-model="password"
       />
-      <button class="style_btn" type="submit">Register</button>
+      <br><br>
+      <button class="style_btn" type="submit">Registrera</button>
     </form>
   </div>
 </template>

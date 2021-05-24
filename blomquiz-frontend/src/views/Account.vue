@@ -2,11 +2,20 @@
   <div class="account">
     <div>
       <form action="" @submit.prevent="signIn()" id="signup-form">
-        <label for="email">Användarnamn: </label>
-        <input type="email" id="email" required v-model="email"><br><br>
-        <label for="password"> Lösenord: </label>
-        <input type="password" id="password" v-model="password"><br><br>
-
+         <h2>Logga in:</h2>
+     <label>Email:</label> <input
+          type="email"
+          placeholder="Email address..."
+          v-model="email"
+      />
+      <br><br>
+     <label>Lösenord:</label> <input
+          type="password"
+          placeholder="password..."
+          v-model="password"
+      />
+      <br>
+      <br>
         <input type="submit" class="style_btn" value="Logga in">
         <br><br>
       </form>
