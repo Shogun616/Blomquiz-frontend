@@ -159,7 +159,7 @@ section.grid-container {
 nav {
   grid-area: nav;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   text-align: center;
   font-size: 16px;
   padding: 5px;
@@ -176,18 +176,18 @@ nav {
 @media screen and (min-width: 1025px){
 
   .image_header {
-    width:1000px;
+    width:800px;
   }
 
   section.grid-container {
-    width: 1880px;
+    width: 1000px;
     margin: 20px auto;
   }
 
   nav {
     grid-area: nav;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns:1fr 1fr 1fr 1fr 1fr;
     text-align: center;
     font-size: 16px;
     padding: 5px;
