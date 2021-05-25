@@ -94,7 +94,17 @@ export default {
     return {
       email:'',
       password:'',
+      users:[],
     }
+  },
+  mounted(){
+    fetch('http://127.0.0.1:3000/api/users/')
+        .then((response) => {
+          return response.json();
+        })
+        .then((data) => {
+          this.users = data.user;
+        })
   },
   methods:{
    signIn() {

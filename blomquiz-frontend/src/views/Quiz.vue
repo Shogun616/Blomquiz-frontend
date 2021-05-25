@@ -10,7 +10,7 @@
 <!--    <img class="image" alt="" :src="'public/img/tussilago.png'">-->
     <div v-if="startGame">
       <div>
-        <p>Lycka till {{this.email}}. Kan du slå ditt förra resultat på {{this.highScore}}</p>
+<!--        <p>Lycka till {{this.email}}. Kan du slå ditt förra resultat på {{this.highScore}}</p>-->
         <p>
           Fråga: {{questionNumber}} / 10 (Nivå: {{level}}).
         </p>
@@ -65,6 +65,7 @@
 </template>
 
 <script>
+import axios from "axios";
 /*import PopUp from '../components/PopUp.vue'*/
 export default {
   name: "Quiz.vue",
@@ -102,7 +103,7 @@ export default {
     }
   },
     mounted(){
-      fetch('http://127.0.0.1:3000/api/flower/')
+      fetch('http://127.0.0.1:3000/api/flowers/')
           .then((response) => {
             return response.json();
           })
@@ -151,7 +152,7 @@ export default {
       getAlternatives(){
         this.startGame = true
         this.visible = false
-        if(this.flowers[this.questions].level === this.level){
+        if(this.flowers[this.questions].level === parseInt(this.level)){
           this.answer = this.flowers[this.questions].name
           this.alt1 = this.flowers[Math.floor(Math.random() * 10 * this.level)+1].name
           this.alt2 = this.flowers[Math.floor(Math.random() * 10 * this.level)+1].name
