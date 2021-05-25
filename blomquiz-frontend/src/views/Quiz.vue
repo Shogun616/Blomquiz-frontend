@@ -10,6 +10,7 @@
 <!--    <img class="image" alt="" :src="'public/img/tussilago.png'">-->
     <div v-if="startGame">
       <div>
+        <p>Lycka till {{this.email}}. Kan du slå ditt förra resultat på {{this.highScore}}</p>
         <p>
           Fråga: {{questionNumber}} / 10 (Nivå: {{level}}).
         </p>
@@ -47,6 +48,7 @@
           <input type="submit" value="Skicka" class="style_btn">
           <button type="button" v-on:click="next" class="style_btn">Nästa</button>
           <button type="button" v-on:click="exitGame" class="style_btn">Avbryt</button>
+          <button type="button" v-on:click="saveProgress"  class="style_btn">Spara</button>
         </div> 
         <div><article><p>
           Antal rätt: {{counter}} / 10 rätt
@@ -88,12 +90,15 @@ export default {
       alt1: "",
       alt2: "",
       alt: [],
-      level: 1,
+      level: localStorage.getItem('level'),
       questions: 0,
       counter: 0,
       startGame: false,
       visible: true,
       questionNumber: 0,
+      responseData: '',
+      email: localStorage.getItem('email'),
+      highScore: localStorage.getItem('result'),
     }
   },
     mounted(){
@@ -168,7 +173,14 @@ export default {
         }
 
         this.alt.sort()
-      }
+      },
+
+      saveProgress(){
+
+  alert(this.email + 'saved');
+  axios.patch('http://localhost:3000/api/users/' + this.email + '/' + this.level + '/' + this.counter).then(response => this.responseData = response.data);
+  localStorage.setItem('result', this.counter)
+}
         /*checkIsTrue: function () {
         this.isShowing = "test";
         console.log("funkar?");

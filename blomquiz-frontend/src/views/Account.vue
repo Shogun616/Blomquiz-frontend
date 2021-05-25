@@ -97,15 +97,23 @@ export default {
     }
   },
   methods:{
-    signIn() {
-      // const email = document.getElementById('email').value;
-      // const password = document.getElementById('password').value;
-      firebase.auth().signInWithEmailAndPassword(this.email, this.password)
-          .then(() => {
-            alert('Successfully logged in');
-            localStorage.setItem('email', this.email)
-            this.$router.push('/quiz')
-          })
+   signIn() {
+  firebase.auth().signInWithEmailAndPassword(this.email, this.password)
+      .then(() => {
+        alert('Successfully logged in');
+        localStorage.setItem('email', this.email)
+        localStorage.setItem('level', '1')
+        localStorage.setItem('result', '0')
+        for (let i = 0; i < this.users.length; i++) {
+          if(this.users[i].email === this.email){
+            localStorage.setItem('level', this.users[i].level)
+            localStorage.setItem('result', this.users[i].result)
+          }
+        }
+
+
+        this.$router.push('/quiz')
+      })
       .catch(function (error) {
         // Handle Errors here.
         const errorCode = error.code;
