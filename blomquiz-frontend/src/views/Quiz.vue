@@ -20,6 +20,7 @@
       <form v-on:submit.prevent="checkAnswer">
         <!--    v-on:change="checkIsTrue($event)"-->
 <div class="popup" v-if="seen">
+   <button type="button" v-on:click="next" class="style_btn">x</button>
             <h1 v-if="svar === 'Rätt'" style="color: #6D8227">{{ svar }}</h1>
             <h1 v-else-if="svar ==='Fel'" style="color: #BA5D23">{{ svar }}</h1>
             <p>{{info}}</p>
@@ -46,7 +47,6 @@
           <br>
           <br>
           <input type="submit" value="Skicka" class="style_btn">
-          <button type="button" v-on:click="next" class="style_btn">Nästa</button>
           <button type="button" v-on:click="exitGame" class="style_btn">Avbryt</button>
           <button type="button" v-on:click="saveProgress"  class="style_btn">Spara</button>
         </div> 
