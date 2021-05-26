@@ -14,7 +14,7 @@
         <p>
           Fråga: {{questionNumber}} / 10 (Nivå: {{level}}).
         </p>
-        <h2>Vilken blomma är det här?</h2>
+        <h2>{{question}}</h2>
       </div>
 <div class="question">
       <form v-on:submit.prevent="checkAnswer">
@@ -100,6 +100,7 @@ export default {
       responseData: '',
       email: localStorage.getItem('email'),
       highScore: localStorage.getItem('result'),
+      findLvl: false
     }
   },
     mounted(){
@@ -140,26 +141,40 @@ export default {
         this.visible = true
       },
       checkLevel(){
-        if(this.counter===10){
+        if(this.counter===10 && this.level==='1') {
           alert("Grattis! Du svarade rätt på alla frågorna.");
-          this.level=2;
+          this.level = '2'
+        }else if (this.counter === 10 && this.level === '2'){
+          alert("Grattis! Du klarade level 2 yay!")
+          this.level='3';
+          this.questions=0;
         }else{
           alert("Tyvärr! Du svarade inte rätt på alla frågorna. Försök igen.");
           this.questions=this.questions-10;
         }
         this.counter=0;
       },
+      saveProgress(){
+
+  alert(this.email + 'saved');
+  axios.patch('http://localhost:3000/api/users/' + this.email + '/' + this.level + '/' + this.counter).then(response => this.responseData = response.data);
+  localStorage.setItem('result', this.counter)
+},
+
       getAlternatives(){
         this.startGame = true
         this.visible = false
         if(this.flowers[this.questions].level === parseInt(this.level)){
           this.answer = this.flowers[this.questions].name
-          this.alt1 = this.flowers[Math.floor(Math.random() * 10 * this.level)+1].name
-          this.alt2 = this.flowers[Math.floor(Math.random() * 10 * this.level)+1].name
+          this.alt1 = this.flowers[Math.floor(Math.random() * 10 * parseInt(this.level))+1].name
+          this.alt2 = this.flowers[Math.floor(Math.random() * 10 * parseInt(this.level))+1].name
           if(this.alt1===this.alt2 || this.alt1 === this.answer || this.alt2 === this.answer){
 
             this.getAlternatives()
-          }else{
+
+          }/*else if(this.level === '3'){
+            this.level3()}*/
+          else{
             this.questionNumber = this.flowers[this.questions].questionNumber;
             this.image = this.flowers[this.questions].url;
             this.info = this.flowers[this.questions].info;
@@ -168,6 +183,8 @@ export default {
             this.alt[2]=this.answer;
             this.questions++
           }
+        }else if(this.level === '3'){
+          this.level3()
         }else {
           this.questions++
           this.getAlternatives()
@@ -176,12 +193,21 @@ export default {
         this.alt.sort()
       },
 
-      saveProgress(){
+        level3(){
+          //this.questions = 0;
+          this.questionNumber = this.flowers[this.questions].questionNumber;
+          this.image = this.flowers[this.questions].url;
+          this.info = this.flowers[this.questions].info;
+          this.question=this.flowers[this.questions].infoQuestion;
+          this.alt1=this.flowers[this.questions].answerC;
+          this.alt2=this.flowers[this.questions].answerB;
+          this.answer=this.flowers[this.questions].answerA;
+          this.alt[0]=this.alt1;
+          this.alt[1]=this.alt2;
+          this.alt[2]=this.answer;
+          this.questions++
 
-  alert(this.email + 'saved');
-  axios.patch('http://localhost:3000/api/users/' + this.email + '/' + this.level + '/' + this.counter).then(response => this.responseData = response.data);
-  localStorage.setItem('result', this.counter)
-}
+        }
         /*checkIsTrue: function () {
         this.isShowing = "test";
         console.log("funkar?");
