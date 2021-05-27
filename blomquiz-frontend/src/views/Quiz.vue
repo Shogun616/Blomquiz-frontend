@@ -20,10 +20,11 @@
       <form v-on:submit.prevent="checkAnswer">
         <!--    v-on:change="checkIsTrue($event)"-->
 <div class="popup" v-if="seen">
-   <button type="button" v-on:click="next" class="style_btn">x</button>
+
             <h1 v-if="svar === 'Rätt'" style="color: #6D8227">{{ svar }}</h1>
             <h1 v-else-if="svar ==='Fel'" style="color: #BA5D23">{{ svar }}</h1>
             <p>{{info}}</p>
+  <button type="button" v-on:click="next" class="style_btn">x</button>
           </div>
 <!--        <img class="image" alt ="" :src ="'../assets/img/'+ image">-->
 <!--        <img class="image" alt ="" src =../assets/img/>-->
@@ -154,6 +155,7 @@ export default {
         }
         this.counter=0;
       },
+
       saveProgress(){
 
   alert(this.email + 'saved');
@@ -166,8 +168,8 @@ export default {
         this.visible = false
         if(this.flowers[this.questions].level === parseInt(this.level)){
           this.answer = this.flowers[this.questions].name
-          this.alt1 = this.flowers[Math.floor(Math.random() * 10 * parseInt(this.level))+1].name
-          this.alt2 = this.flowers[Math.floor(Math.random() * 10 * parseInt(this.level))+1].name
+          this.alt1 = this.flowers[Math.floor(Math.random() * 10 * parseInt(this.level))].name
+          this.alt2 = this.flowers[Math.floor(Math.random() * 10 * parseInt(this.level))].name
           if(this.alt1===this.alt2 || this.alt1 === this.answer || this.alt2 === this.answer){
 
             this.getAlternatives()
@@ -185,10 +187,10 @@ export default {
           }
         }else if(this.level === '3'){
           this.level3()
-        }else {
+        }/*else {
           this.questions++
           this.getAlternatives()
-        }
+        }*/
 
         this.alt.sort()
       },
