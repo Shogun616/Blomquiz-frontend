@@ -149,6 +149,10 @@ export default {
           alert("Grattis! Du klarade level 2 yay!")
           this.level='3';
           this.questions=0;
+        }else if (this.counter === 10 && this.level === '3'){
+          alert("Grattis! Du kan Allt!")
+          this.level='1';
+          this.questions=0;
         }else{
           alert("Tyvärr! Du svarade inte rätt på alla frågorna. Försök igen.");
           this.questions=this.questions-10;
