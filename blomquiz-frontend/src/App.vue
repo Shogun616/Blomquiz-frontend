@@ -141,11 +141,46 @@ footer {
   font-family: 'Poppins', sans-serif;
 }
 
+.style_btnX {
+  background-color: #242B20;
+  color:#F2F2F2;
+  padding: 2px;
+  width: 45px;
+  height: auto;
+  margin: 5px;
+  font-family: 'Poppins', sans-serif;
+}
+
 .image_header {
   display: grid;
-  width: 360px;
+  width: 290px;
   height: auto;
   margin: 0 auto 5px;
+}
+
+.image {
+  width:10px;
+}
+.question{
+  position:relative;
+  width: 290px;
+  padding: 20px;
+  margin:10px auto 10px auto;
+  border-radius: 10px;
+  z-index: 0;
+  alignment: center;
+}
+
+.popup {
+  position:absolute;
+  width: 290px;
+  padding: 20px;
+  padding-bottom: 10px;
+  margin:10px auto 10px auto;
+  background: lightgrey;
+  border-radius: 10px;
+  z-index:1;
+  opacity: 0.9;  
 }
 
 /*Tablet*/
@@ -169,6 +204,9 @@ nav {
 
 .image_header {
   width:750px;
+}
+.image {
+  width:360px
 }
 }
 
@@ -194,5 +232,30 @@ nav {
     grid-gap: 5px;
     margin: 5px 5px 50px;
   }
+  .image {
+  width:360px
+}
+
+.question{
+  position:relative;
+  width: 360px;
+  padding: 20px;
+  margin:10px auto 10px auto;
+  border-radius: 10px;
+  z-index: 0;
+  alignment: center;
+}
+
+.popup {
+  position:absolute;
+  width: 320px;
+  padding: 20px;
+  padding-bottom: 10px;
+  margin:10px auto 10px auto;
+  background: lightgrey;
+  border-radius: 10px;
+  z-index:1;
+  opacity: 0.9;  
+}
 }
 </style>

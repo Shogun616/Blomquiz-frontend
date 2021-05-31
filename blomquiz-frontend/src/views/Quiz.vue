@@ -24,7 +24,7 @@
             <h1 v-if="svar === 'Rätt'" style="color: #6D8227">{{ svar }}</h1>
             <h1 v-else-if="svar ==='Fel'" style="color: #BA5D23">{{ svar }}</h1>
             <p>{{info}}</p>
-  <button type="button" v-on:click="next" class="style_btn">x</button>
+  <button type="button" v-on:click="next" class="style_btnX">X</button>
           </div>
 <!--        <img class="image" alt ="" :src ="'../assets/img/'+ image">-->
 <!--        <img class="image" alt ="" src =../assets/img/>-->
@@ -45,8 +45,7 @@
         <input type="radio" :value="alt[2]" name="alt2" v-model="select">
         <br>
         <div>
-          <br>
-          <br>
+      
           <input type="submit" value="Skicka" class="style_btn">
           <button type="button" v-on:click="exitGame" class="style_btn">Avbryt</button>
           <button type="button" v-on:click="saveProgress"  class="style_btn">Spara</button>
@@ -54,7 +53,6 @@
         <div><article><p>
           Antal rätt: {{counter}} / 10 rätt
         </p>
-        <p></p>
         </article>
         </div>
       </form>
@@ -261,11 +259,14 @@ export default {
   position:absolute;
   width: 320px;
   padding: 20px;
+  padding-bottom: 10px;
   margin:10px auto 10px auto;
   background: lightgrey;
   border-radius: 10px;
   z-index:1;
+  opacity: 0.9;  
 }
+
 
 /*.random {*/
 /*  font-size: 100px;*/
