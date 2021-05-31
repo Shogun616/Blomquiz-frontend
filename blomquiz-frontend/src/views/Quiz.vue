@@ -155,6 +155,7 @@ export default {
           this.questions=0;
         }else if (this.counter === 10 && this.level === '3'){
           alert("Grattis! Du kan Allt!")
+          this.question="Vilken blomma är det här?"
           this.level='1';
           this.questions=0;
         }else{
