@@ -19,7 +19,7 @@
         <input type="submit" class="style_btn" value="Logga in">
         <br>
       </form>
-        <button class="style_btn" v-on:click="register" >Registrera</button>
+      <button class="style_btn" v-on:click="register" >Registrera</button>
     </div>
   </div>
 </template>
@@ -121,8 +121,6 @@ export default {
             localStorage.setItem('result', this.users[i].result)
           }
         }
-
-
         this.$router.push('/quiz')
       })
       .catch(function (error) {
@@ -139,7 +137,7 @@ export default {
       });
      },
     register() {
-      this.$router.push('/register')
+     this.$router.push('/register')
     }
   }
 }
