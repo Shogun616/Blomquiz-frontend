@@ -158,29 +158,8 @@ footer {
   margin: 0 auto 5px;
 }
 
-.image {
-  width:10px;
-}
-.question{
-  position:relative;
-  width: 290px;
-  padding: 20px;
-  margin:10px auto 10px auto;
-  border-radius: 10px;
-  z-index: 0;
-  alignment: center;
-}
-
-.popup {
-  position:absolute;
-  width: 290px;
-  padding: 20px;
-  padding-bottom: 10px;
-  margin:10px auto 10px auto;
-  background: lightgrey;
-  border-radius: 10px;
-  z-index:1;
-  opacity: 0.9;  
+.about {
+  margin: 10px;
 }
 
 /*Tablet*/

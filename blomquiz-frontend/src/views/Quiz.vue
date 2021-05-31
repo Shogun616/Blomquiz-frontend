@@ -1,13 +1,16 @@
 <template>
+
   <div class="quiz">
 <div v-if="visible">
   <button v-on:click="getAlternatives" class="style_btn">Start</button>
+
 <article>
   <p>Tryck på starta-knappen för att börja spelet.</p>
 </article>
 <h1>🌻</h1> 
 </div>
 <!--    <img class="image" alt="" :src="'public/img/tussilago.png'">-->
+ 
     <div v-if="startGame">
       <div>
 <!--        <p>Lycka till {{this.email}}. Kan du slå ditt förra resultat på {{this.highScore}}</p>-->
@@ -57,10 +60,13 @@
         </div>
       </form>
       </div>
+      
     </div>
+   
     <!--    <PopUp v-if="svar === 'Rätt'" v-bind:msg="svar" style="color: green"></PopUp>-->
     <!--    <PopUp v-else-if="svar ==='Fel'" v-bind:msg="svar" style="color: red"></PopUp>-->
   </div>
+
 </template>
 
 <script>
@@ -266,6 +272,8 @@ export default {
   z-index:1;
   opacity: 0.9;  
 }
+
+
 
 
 /*.random {*/
