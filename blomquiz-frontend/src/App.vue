@@ -208,10 +208,32 @@ nav {
 .image_header {
   width:750px;
 }
-/*
+
 .image {
   width:360px
-}*/
+}
+
+.question{
+  position:relative;
+  width: 360px;
+  padding: 20px;
+  margin:10px auto 10px auto;
+  border-radius: 10px;
+  z-index: 0;
+  alignment: center;
+}
+
+.popup {
+  position:absolute;
+  width: 320px;
+  padding: 20px;
+  padding-bottom: 10px;
+  margin:10px auto 10px auto;
+  background: lightgrey;
+  border-radius: 10px;
+  z-index:1;
+  opacity: 0.9;  
+}
 }
 
 /*Desktop*/
