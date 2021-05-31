@@ -65,11 +65,9 @@ section {
 
 header {
   grid-area: header;
-  /*display: center;*/
-  text-align: center;
-  margin-top: 25px;
-  margin-bottom: 25px;
-  padding: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: auto;
   font-size: 25px;
   font-family: 'Montserrat', sans-serif;
   background-color: #E09D31; /*#BFB26F;*/
@@ -162,6 +160,32 @@ footer {
   margin: 10px;
 }
 
+.image {
+  width:200px
+}
+
+.question{
+  position:relative;
+  width: 90%;
+  padding: 20px;
+  margin:10px auto 10px auto;
+  border-radius: 10px;
+  z-index: 0;
+  alignment: center;
+}
+
+.popup {
+  position:absolute;
+  width: 260px;
+  padding: 20px;
+  padding-bottom: 10px;
+  margin:10px auto 10px auto;
+  background: lightgrey;
+  border-radius: 10px;
+  z-index:1;
+  
+}
+
 /*Tablet*/
 @media screen and (min-width: 768px) and (max-width: 1024px) {
 
@@ -184,9 +208,10 @@ nav {
 .image_header {
   width:750px;
 }
+/*
 .image {
   width:360px
-}
+}*/
 }
 
 /*Desktop*/
@@ -211,6 +236,7 @@ nav {
     grid-gap: 5px;
     margin: 5px 5px 50px;
   }
+  
   .image {
   width:360px
 }
@@ -236,5 +262,6 @@ nav {
   z-index:1;
   opacity: 0.9;  
 }
+
 }
 </style>

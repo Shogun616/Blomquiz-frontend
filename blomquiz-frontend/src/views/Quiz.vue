@@ -248,9 +248,10 @@ export default {
 
 <style scoped>
 
+/*
 .question{
   position:relative;
-  width: 360px;
+  width: 300px;
   padding: 20px;
   margin:10px auto 10px auto;
   border-radius: 10px;
@@ -258,9 +259,7 @@ export default {
   alignment: center;
 }
 
-.image {
-  width:360px
-}
+
 .popup {
   position:absolute;
   width: 320px;
@@ -272,6 +271,7 @@ export default {
   z-index:1;
   opacity: 0.9;  
 }
+*/
 
 
 
