@@ -185,6 +185,10 @@ footer {
   z-index:1;
   
 }
+.userInfo {
+  position: center;
+  color: #640408;
+}
 
 /*Tablet*/
 @media screen and (min-width: 768px) and (max-width: 1024px) {
@@ -234,6 +238,12 @@ nav {
   z-index:1;
   opacity: 0.9;  
 }
+  .userInfo {
+    width: 150px;
+    position: absolute;
+    padding-left: 20px;
+    color: #640408;
+  }
 }
 
 /*Desktop*/
@@ -284,6 +294,12 @@ nav {
   z-index:1;
   opacity: 0.9;  
 }
+  .userInfo {
+    width: 150px;
+    position: absolute;
+    padding-left: 20px;
+    color: #640408;
+  }
 
 }
 </style>
