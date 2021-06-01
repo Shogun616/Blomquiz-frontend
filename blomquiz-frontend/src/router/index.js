@@ -36,14 +36,6 @@ const routes = [
     name: 'Register',
     component: () => import('../views/Register.vue')
   },
-  {
-    path: '/dashboard',
-    name: 'Dashboard',
-    component: () => import('../views/Dashboard.vue'),
-    meta: {
-      authRequired: true,
-    }
-  }
 ]
 
 const router = new VueRouter({

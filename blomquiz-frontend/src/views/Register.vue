@@ -37,7 +37,7 @@ export default {
           .auth()
           .createUserWithEmailAndPassword(this.email, this.password).
       then(() => {
-        alert('Successfully registered! Please login.');
+        alert('Registreringen lyckades! Var vänlig logga in.');
 
        axios.post('http://localhost:3000/api/users/'+this.email).then(response => this.responseData = response.data);
 

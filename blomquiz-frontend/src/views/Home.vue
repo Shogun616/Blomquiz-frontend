@@ -1,9 +1,6 @@
 <template>
   <div class="home">
     <div>
-             <!--   
-    <img class="image" alt="" src="../assets/quiz_logga.jpg">
-  -->
       <p></p>
       <p>Ett quiz som motiverar användaren att fortsätta och förbättra sig.</p>
       <p>Kan användas i alla åldrar!</p>
@@ -36,19 +33,4 @@ input label{
   display:grid;
   grid-column: auto;
 }
-
-/*!*Tablet*!*/
-/*@media screen and (min-width: 768px) and (max-width: 1024px) {*/
-/*.image {*/
-/*width:625px;*/
-/*}*/
-/*}*/
-
-/*!*Desktop*!*/
-/*@media screen and (min-width: 1025px){*/
-/*.image {*/
-/*width:625px;*/
-/*}*/
-
-/*}*/
 </style>

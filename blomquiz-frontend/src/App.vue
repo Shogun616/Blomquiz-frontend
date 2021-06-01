@@ -32,23 +32,13 @@ body {
 
 #app {
   font-family: 'Montserrat', sans-serif;
-  /*font-family: 'Open sans', sans-serif;*/
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #242614;
   background-color:#F2F2F2;
 
-  
-  /*#242B20;*/
-}/*
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}*/
+}
 
 section {
   display: grid;
@@ -67,7 +57,7 @@ header {
   grid-area: header;
   margin-top: 20px;
   margin-bottom: 20px;
-  padding: auto;
+  padding: 10px;
   font-size: 25px;
   font-family: 'Montserrat', sans-serif;
   background-color: #E09D31; /*#BFB26F;*/

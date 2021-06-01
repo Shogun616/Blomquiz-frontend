@@ -23,65 +23,6 @@
   </div>
 </template>
 
-<!-- The core Firebase JS SDK is always required and must be listed first -->
-<!--<script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>-->
-<!--<script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-auth.js"></script>-->
-
-
-<!--<script>-->
-<!--// Your web app's Firebase configuration-->
-<!--import firebase from "firebase";-->
-
-<!--const firebaseConfig = {-->
-<!--  apiKey: "AIzaSyAS2ZgyT42b9Ff0DUXVbKlyOGhJFe9dYNs",-->
-<!--  authDomain: "blomauth.firebaseapp.com",-->
-<!--  projectId: "blomauth",-->
-<!--  storageBucket: "blomauth.appspot.com",-->
-<!--  messagingSenderId: "42113241521",-->
-<!--  appId: "1:42113241521:web:ecda05d5dc7be808b2ad90"-->
-<!--};-->
-<!--// Initialize Firebase-->
-<!--firebase.initializeApp(firebaseConfig);-->
-
-
-<!--</script>-->
-
-<!--<script type="text/javascript">-->
-<!--function signUp() {-->
-<!--  alert("signUp");-->
-<!--  var email = document.getElementById('email').value;-->
-<!--  var password = document.getElementById('password').value;-->
-<!--  firebase.auth().createUserWithEmailAndPassword(email, password).catch(function (error) {-->
-<!--    // Handle Errors here.-->
-<!--    var errorCode = error.code;-->
-<!--    var errorMessage = error.message;-->
-<!--    if (errorCode === 'auth/weak-password') {-->
-<!--      alert('The password is too weak.');-->
-<!--    } else {-->
-<!--      alert(errorMessage);-->
-<!--    }-->
-<!--    console.log(error);-->
-<!--  });-->
-<!--  -->
-<!--  callUrl(email);-->
-<!--}-->
-
-<!--function callUrl(email) {-->
-<!--  window.location = 'http://localhost:3000/api/users/' + email;-->
-<!--}-->
-
-<!--function testinlog() {-->
-<!--  firebase.auth().onAuthStateChanged(function (user) {-->
-<!--    if (user) {-->
-<!--      loginUser = (user.email);-->
-<!--    } else {-->
-<!--      alert("fel")-->
-<!--    }-->
-<!--  });-->
-<!--}-->
-<!--</script>-->
-
-
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
 <script>
@@ -110,7 +51,7 @@ export default {
    signIn() {
   firebase.auth().signInWithEmailAndPassword(this.email, this.password)
       .then(() => {
-        alert('Successfully logged in');
+        alert('Du är inloggad!');
         localStorage.setItem('email', this.email)
         localStorage.setItem('level', '1')
         localStorage.setItem('result', '0')
@@ -123,11 +64,10 @@ export default {
         this.$router.push('/quiz')
       })
       .catch(function (error) {
-        // Handle Errors here.
         const errorCode = error.code;
         const errorMessage = error.message;
         if (errorCode === 'auth/wrong-password') {
-          alert('Wrong password.');
+          alert('Fel lösenord');
         } else {
           alert(errorMessage);
         }
