@@ -19,7 +19,6 @@
         <input type="submit" class="style_btn" value="Logga in">
         <br>
       </form>
-      <button class="style_btn" v-on:click="register" >Registrera</button>
     </div>
   </div>
 </template>
@@ -136,9 +135,6 @@ export default {
         document.getElementById('quickstart-sign-in').disabled = false;
       });
      },
-    register() {
-     this.$router.push('/register')
-    }
   }
 }
 
