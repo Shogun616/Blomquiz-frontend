@@ -137,25 +137,32 @@ export default {
     checkLevel() {
       if (this.counter === 10 && this.level === '1') {
         alert("Grattis! Du svarade rätt på alla frågorna.");
-        this.level = '2'
+        this.level = '2';
+        this.counter = 0;
+        this.saveProgress();
       } else if (this.counter === 10 && this.level === '2') {
         alert("Grattis! Du klarade level 2 yay!")
         this.level = '3';
         this.index = 0;
+        this.counter = 0;
+        this.saveProgress();
       } else if (this.counter === 10 && this.level === '3') {
         alert("Grattis! Du kan Allt!")
         this.question = "Vilken blomma är det här?"
         this.level = '1';
         this.index = 0;
+        this.counter = 0;
+        this.saveProgress();
       } else {
         alert("Tyvärr! Du svarade inte rätt på alla frågorna. Försök igen.");
         this.index = this.index - 10;
+        this.saveProgress();
+        this.counter = 0;
       }
-      this.counter = 0;
+
     },
 
     saveProgress() {
-
       alert(this.email + 'saved');
       axios.patch('http://localhost:3000/api/users/' + this.email + '/' + this.level + '/' + this.counter).then(response => this.responseData = response.data);
       localStorage.setItem('result', this.counter)
